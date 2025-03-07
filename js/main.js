@@ -1,4 +1,3 @@
-// Obtendo os elementos necessários
 const video = document.getElementById('video');
 const captureButton = document.getElementById('captureButton');
 const canvas = document.getElementById('canvas');
@@ -38,6 +37,10 @@ function captureImage() {
   const imageDataURL = canvas.toDataURL('image/png');
   capturedImage.src = imageDataURL;
   capturedImage.style.display = 'block';
+
+  // Atualizando o link de download para a imagem capturada
+  const downloadButton = document.getElementById('downloadButton');
+  downloadButton.href = imageDataURL;
 }
 
 // Verificando a compatibilidade do navegador e iniciando a câmera
